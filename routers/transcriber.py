@@ -1,6 +1,8 @@
 from fastapi import (
     APIRouter,
+    UploadFile,
 )
+import aiofiles
 
 import whisper
 
@@ -12,5 +14,9 @@ transcriber = Transcriber()
 @router.post(
     "/transcribe",
 )
-async def transcribe_file():
-    pass
+async def transcribe_file(file: UploadFile):
+    async with aiofiles.open('tmp', 'wb') as out_file:
+        content = await file.read()
+        await out_file.write(content)
+    transcription = transcriber.transcribe('tmp') 
+    return transcription
