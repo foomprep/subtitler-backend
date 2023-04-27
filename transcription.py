@@ -5,5 +5,8 @@ class Transcriber:
         self.model = whisper.load_model('small')
 
     def transcribe(self, media_path):
-        result = self.model.transcribe(media_path, word_timestamps=True)
+        options = {
+            "fp16": False,
+        }
+        result = self.model.transcribe(media_path, word_timestamps=True, **options)
         return result
