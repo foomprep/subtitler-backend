@@ -15,7 +15,7 @@ def generate_subtitles(transcription):
     subtitles = {'start': [], 'end': [], 'text': []}
     current_start = None
     sentence = ''
-    matches = ['.', '?', '!']
+    matches = ['.', '?', '!', ',']
     for segment in transcription['segments']:
         for word in segment['words']:
             if not any([x in word['word'] for x in matches]):
