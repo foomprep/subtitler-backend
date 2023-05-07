@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import transcriber
+from routers import translator
 
 app = FastAPI()
 
@@ -15,6 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(transcriber.router)
+app.include_router(translator.router)
 
 @app.get("/ping")
 async def pong():

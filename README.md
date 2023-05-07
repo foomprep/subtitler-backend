@@ -4,7 +4,9 @@ This is the backend for [Subtitler](https://github.com/jojeyh/subtitler.git).
 
 ## Dependencies
 
-```sudo apt install ffmpeg```
+```
+sudo apt install ffmpeg
+```
 
 ## Getting Started
 
