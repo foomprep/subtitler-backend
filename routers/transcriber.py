@@ -9,7 +9,7 @@ import whisper
 router = APIRouter()
 
 from transcription import Transcriber
-transcriber = Transcriber()
+transcriber = Transcriber(language="de", model_size="medium")
 
 def generate_subtitles(transcription):
     subtitles = {'start': [], 'end': [], 'text': []}
