@@ -4,8 +4,6 @@ from fastapi import (
 )
 import aiofiles
 
-import whisper
-
 router = APIRouter()
 
 from transcription import Transcriber
